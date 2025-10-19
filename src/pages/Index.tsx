@@ -63,7 +63,14 @@ const Index = () => {
               </Button>
             </div>
             <div className="flex-1 overflow-hidden">
-              <NoteEditor note={currentNote} onUpdateNote={updateNote} />
+              <NoteEditor 
+                note={currentNote} 
+                onUpdateNote={updateNote}
+                onDeleteNote={(id) => {
+                  deleteNote(id);
+                  handleBackToList();
+                }}
+              />
             </div>
           </div>
         )}
@@ -83,7 +90,11 @@ const Index = () => {
         />
       </div>
       <div className="flex-1 overflow-hidden">
-        <NoteEditor note={currentNote} onUpdateNote={updateNote} />
+        <NoteEditor 
+          note={currentNote} 
+          onUpdateNote={updateNote}
+          onDeleteNote={deleteNote}
+        />
       </div>
     </div>
   );
