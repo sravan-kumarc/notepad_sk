@@ -11,9 +11,7 @@ on:
 
 jobs:
   build:
-
     runs-on: agent1
-
     steps:
     - uses: actions/checkout@v4
     - name: Use Node.js ${{ matrix.node-version }}
